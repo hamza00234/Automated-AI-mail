@@ -1,0 +1,16 @@
+{
+  "name": "email-notification",
+  "version": "1.0.0",
+  "description": "This application automatically fetches the latest AI-related news and sends them to a specified email address daily at 10 AM.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "datetime": "^0.0.3",
+    "dotenv": "^16.5.0",
+    "email-notification": "file:"
+  }
+}
