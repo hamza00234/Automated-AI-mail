@@ -1,0 +1,24 @@
+name: Automated AI Mail
+
+on:
+  push:
+    branches:
+      - main   # Runs immediately when you push to main
+  schedule:
+    - cron: '0 10 * * *'  # Runs every day at 10 AM UTC
+
+jobs:
+  send-mail:
+    runs-on: windows-latest  # Needed for py command
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          py -m pip install --upgrade pip
+          py -m pip install -r requirements.txt
+
+      - name: Run mail script
+        run: py ai_news_emailer.py
